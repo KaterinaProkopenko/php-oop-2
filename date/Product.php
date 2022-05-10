@@ -1,27 +1,24 @@
 <?php
-include_once __DIR__ . "/Buy.php";
-
-    class Product extends Buy {
-        protected $name;
+    class Product {
+        protected $productName;
         protected $brand;
         protected $price;
         protected $description;
 
-        function __construct($name, $brand, $price, $description, $animal)
+        function __construct($productName, $brand, $price, $description)
         {
-            parent::__construct($animal);
-            $this->name = $name;
+            $this->productName = $productName;
             $this->brand = $brand;
             $this->price = $price;
             $this->description = $description;
         }
 
-        public function setName($name){
-            $this->name = $name;
+        public function setProductName($productName){
+            $this->productName = $productName;
         }
 
-        public function getName(){
-            return $this->name;
+        public function getProductName(){
+            return $this->productName;
         }
 
         public function setBrand($brand){

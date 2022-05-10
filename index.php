@@ -1,11 +1,22 @@
 <?php
     include_once __DIR__ . "/date/Product.php";
     include_once __DIR__ . "/date/Alimentation.php";
-    include_once __DIR__ . "/date/VeterinaryDiet.php";
+    include_once __DIR__ . "/date/User.php";
+    include_once __DIR__ . "/date/CreditCard.php";
 
-    $catThing = new Product('lettiera', 'RC', 2.44, 'Lettiera per gatti' ,'cat');
-    var_dump($catThing);
+    /**
+     * 1) Scegli un prodotto;
+     * 2) Inserisci la tua carta di credito;
+     * 3) Inserisci i tuoi dati personali;
+     * 4) Compri il prodotto scelto;
+     */
 
-    $dogFood = new Alimentation('cibo umido', '100g', true, false, 'Bocconcini in salsa', 'RC', 1.99, 'Bocconcini in salsa per il tuo gatto' ,'dog');
-    var_dump($dogFood);
+    $bocconcini = new Alimentation('cibo umido', '85g', true, true, 'Bocconcini in salsa', 'RC', 1.29, 'Migliori bocconcini in salsa');
+    var_dump($bocconcini);
+
+    $card = new CreditCard(45214521365789210, 2025);
+
+    $user = new User('Pippo', 'Pluto', 'pippo@gmail.com', false, $card);
+
+    echo $user->buyProduct($bocconcini);
 ?>

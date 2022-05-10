@@ -9,9 +9,9 @@
         protected $isAdult;
         protected $isSterilized;
 
-        function __construct($typeOfFood, $weight, $isAdult, $isSterilized, $name, $brand, $price, $description, $animal)
+        function __construct($typeOfFood, $weight, $isAdult, $isSterilized, $name, $brand, $price, $description)
         {
-            parent::__construct($name, $brand, $price, $description, $animal);
+            parent::__construct($name, $brand, $price, $description);
             $this->typeOfFood = $typeOfFood; 
             $this->weight = $weight;
             $this->isAdult = $isAdult;
